@@ -22,7 +22,7 @@ const features = [
   },
 ];
 
-// Animation variants for the container to orchestrate staggered animations
+// Animation variants for the container
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -34,7 +34,7 @@ const containerVariants = {
   },
 };
 
-// Animation for heading (left to right)
+// Animation for heading
 const headingVariants = {
   hidden: { opacity: 0, x: -50 },
   visible: {
@@ -47,7 +47,7 @@ const headingVariants = {
   },
 };
 
-// Animation for paragraph and cards (bottom to top)
+// Animation for paragraph
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -63,8 +63,8 @@ const itemVariants = {
 const Insights = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    triggerOnce: true, // Animation will only trigger once
-    threshold: 0.1,    // Trigger when 10% of the component is in view
+    triggerOnce: true,
+    threshold: 0.1,
   });
 
   useEffect(() => {
@@ -87,13 +87,13 @@ const Insights = () => {
         className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16"
       >
         <motion.h2
-          variants={headingVariants} // Apply left-to-right animation
+          variants={headingVariants} 
           className="text-4xl sm:text-5xl font-medium text-gray-900 leading-tight"
         >
           Where Clinical <br /> Insights Meet Real <br /> World Pharma Strategy
         </motion.h2>
         <motion.p
-          variants={itemVariants} // Apply bottom-to-top animation
+          variants={itemVariants} 
           className="text-gray-600 text-lg lg:mt-2"
         >
           WOL is an expert-driven platform designed to bridge the gap between oncology specialists, emerging opinion leaders, and healthcare industry stakeholders across the globe. Whether launching a new therapy, exploring novel care models, or seeking strategic guidance, WOL provides direct, timely access to the right experts.
@@ -102,13 +102,13 @@ const Insights = () => {
 
       {/* Four-card feature grid */}
       <motion.div
-        variants={containerVariants} // Use container variants again to stagger the cards
+        variants={containerVariants}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
       >
         {features.map((feature, index) => (
           <motion.div
             key={index}
-            variants={itemVariants} // Each card uses the item variant
+            variants={itemVariants} 
             className="bg-gray-100/70 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col"
           >
             <div className="w-16 h-16 bg-white rounded-full mb-6"></div>

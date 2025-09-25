@@ -2,18 +2,17 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-// Animation variants for the container to orchestrate staggered animations
+// Animation variants for the container
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // Adds a delay between each child element animating in
+        staggerChildren: 0.2, 
       },
     },
   };
   
-  // Animation variant for individual elements rising up
   const riseUpVariant = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -27,12 +26,12 @@ const containerVariants = {
   };
 
 const TransformSection = () => {
-  const bgImageUrl = '/dnabig.jpg'; // Path to the background image in the public folder
+  const bgImageUrl = '/dnabig.jpg';
   
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.2, // Trigger when 20% of the component is visible
+    threshold: 0.2,
   });
 
   useEffect(() => {
@@ -49,7 +48,7 @@ const TransformSection = () => {
           ref={ref}
           initial="hidden"
           animate={controls}
-          variants={riseUpVariant} // The whole component will rise up
+          variants={riseUpVariant}
           className="relative rounded-3xl overflow-hidden bg-cover bg-center p-8 sm:p-12 md:p-16"
           style={{ backgroundImage: `url(${bgImageUrl})` }}
         >
@@ -58,7 +57,7 @@ const TransformSection = () => {
 
           {/* Content */}
           <motion.div
-            variants={containerVariants} // This will stagger the children inside
+            variants={containerVariants}
             className="relative z-10 flex flex-col items-start max-w-2xl"
           >
             <div className="bg-white/30 backdrop-blur-sm p-8 sm:p-10 rounded-2xl">

@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-// Animation variants for the container to orchestrate staggered animations
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -13,7 +12,7 @@ const containerVariants = {
   },
 };
 
-// Animation for heading (left to right)
+// Animation for heading
 const headingVariants = {
     hidden: { opacity: 0, x: -50 },
     visible: {
@@ -26,7 +25,7 @@ const headingVariants = {
     },
   };
 
-// Animation for paragraph and video (bottom to top)
+// Animation for paragraph and video
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -44,7 +43,6 @@ const AboutWOL = () => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Animation controls
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -58,7 +56,6 @@ const AboutWOL = () => {
   }, [controls, inView]);
 
 
-  // Function to toggle play/pause for the video
   const handlePlayPause = () => {
     if (videoRef.current.paused) {
       videoRef.current.play();
@@ -113,7 +110,7 @@ const AboutWOL = () => {
             className="w-full h-full object-cover transition-transform duration-500 ease-in-out"
           />
 
-          {/* Play Button Overlay - only shows when video is paused */}
+          {/* Play Button */}
           {!isPlaying && (
             <div className="absolute inset-0 flex items-center justify-center bg-black/10">
               <div className="bg-white/30 rounded-full w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center transition-all duration-300 ease-in-out">

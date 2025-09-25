@@ -54,7 +54,6 @@ const riseUpVariant = {
     },
   };
 
-// A new component for a single event card to handle its own animation
 const EventCard = ({ event }) => {
     const controls = useAnimation();
     const [ref, inView] = useInView({

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-// Animation for title (left to right)
+// Animation for title
 const titleVariant = {
     hidden: { opacity: 0, x: -50 },
     visible: {
@@ -15,7 +15,7 @@ const titleVariant = {
     },
 };
 
-// Animation for other content (rising up)
+// Animation for content
 const riseUpVariant = {
     hidden: { opacity: 0, y: 50 },
     visible: {

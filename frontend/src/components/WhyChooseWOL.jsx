@@ -26,7 +26,6 @@ const features = [
   },
 ];
 
-// Animation variant for elements rising up
 const riseUpVariant = {
   hidden: { opacity: 0, y: 50 },
   visible: {
@@ -39,7 +38,6 @@ const riseUpVariant = {
   },
 };
 
-// A reusable card component wrapped in motion for animation
 const FeatureCard = ({ title, description }) => (
   <motion.div
     variants={riseUpVariant}
@@ -51,7 +49,6 @@ const FeatureCard = ({ title, description }) => (
   </motion.div>
 );
 
-// A helper component to make parts of the grid animate independently
 const AnimatedGridGroup = ({ children, className }) => {
     const controls = useAnimation();
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });

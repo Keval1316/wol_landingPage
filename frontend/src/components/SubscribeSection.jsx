@@ -2,18 +2,18 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-// Animation variants for the container to orchestrate staggered animations
+// Animation variants for the container
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // Adds a delay between each child animating in
+        staggerChildren: 0.2,
       },
     },
   };
 
-// Animation variant for individual elements rising up
+// Animation variant for individual elements
 const riseUpVariant = {
     hidden: { opacity: 0, y: 50 },
     visible: {

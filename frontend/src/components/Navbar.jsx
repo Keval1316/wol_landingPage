@@ -12,7 +12,6 @@ function Navbar() {
             WOL
           </a>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#" className="hover:text-red-600">
               Home

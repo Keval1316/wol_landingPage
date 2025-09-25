@@ -15,7 +15,6 @@ const riseUpVariant = {
     },
 };
 
-// Reusable component for footer links for cleaner code
 const FooterLink = ({ href = '#', children }) => (
   <li>
     <a href={href} className="text-gray-600 hover:text-gray-900 transition-colors duration-300">
@@ -28,7 +27,7 @@ const Footer = () => {
     const controls = useAnimation();
     const [ref, inView] = useInView({
       triggerOnce: true,
-      threshold: 0.1, // Animate when 10% of the footer is visible
+      threshold: 0.1, 
     });
   
     useEffect(() => {

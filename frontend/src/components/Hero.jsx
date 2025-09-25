@@ -1,24 +1,24 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Animation variants for the container to orchestrate the children's animations
+// Animation variants for the container
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2, // Adds a 0.2s delay between each child animating in
-      delayChildren: 0.3,   // Waits 0.3s before starting the first animation
+      staggerChildren: 0.2, 
+      delayChildren: 0.3,   
     },
   },
 };
 
-// Animation variants for each individual item
+// Animation variants for individual item
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 }, // Starts invisible and slightly down
+  hidden: { opacity: 0, y: 20 }, 
   visible: {
     opacity: 1,
-    y: 0, // Animates to fully visible at its final position
+    y: 0, 
     transition: {
       duration: 0.6,
       ease: "easeOut",

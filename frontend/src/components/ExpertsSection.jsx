@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
+// Data for the timeline
 const steps = [
   {
     number: '01',
@@ -20,7 +21,7 @@ const steps = [
   },
 ];
 
-// Animation variant for the main title (top to bottom)
+// Animation variant for the main title
 const titleVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -33,7 +34,7 @@ const titleVariants = {
   },
 };
 
-// Animation variant for each timeline step (rising up)
+// Animation variant for each timeline
 const stepVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
@@ -50,7 +51,7 @@ const stepVariants = {
 const ExpertSection = () => {
   const [activeStep, setActiveStep] = useState(0);
 
-  // Animation controls and refs for different parts of the component
+  // Animation controls
   const titleControls = useAnimation();
   const [titleRef, titleInView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
