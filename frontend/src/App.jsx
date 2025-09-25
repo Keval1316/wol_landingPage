@@ -4,6 +4,12 @@ import Hero from './components/Hero'
 import Insights from './components/InsightsSection'
 import AboutWOL from './components/AboutWOL'
 import ExpertSection from './components/ExpertsSection'
+import WhyChooseWOL from './components/WhyChooseWOL'
+import TransformSection from './components/CtaSection'
+import UpcomingEvents from './components/UpcomingEvents'
+import EventsSection from './components/Events'
+import SubscribeSection from './components/SubscribeSection'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -13,6 +19,12 @@ const App = () => {
       <Insights/>
       <AboutWOL/>
       <ExpertSection/>
+      <WhyChooseWOL/>
+      <TransformSection/>
+      <UpcomingEvents/>
+      <EventsSection/>
+      <SubscribeSection/>
+      <Footer/>
       
     </div>
   )

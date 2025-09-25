@@ -23,16 +23,14 @@ const ExpertSection = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="bg-white font-sans py-16 sm:py-24">
+    <section className="bg-white font-sans pb-16 sm:pb-24">
       <div className="container mx-auto px-6 md:px-16 lg:px-24">
         {/* Component Title */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-light text-gray-900 leading-tight">
-            Choose The Expert
+          <h2 className="text-4xl sm:text-5xl font-medium  text-gray-900 leading-tight">
+            Choose The Expert <br />Who Resonates With Your Idea.
           </h2>
-          <h3 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
-            Who Resonates With Your Idea.
-          </h3>
+          
         </div>
 
         {/* Timeline Section */}
@@ -54,7 +52,7 @@ const ExpertSection = () => {
                   {/* === DESKTOP: Left Text Block === */}
                   <div className="hidden md:block w-1/2 pr-8 text-right">
                     {index % 2 === 0 ? (
-                      <h4 className="text-3xl font-bold text-gray-900 mb-2">{step.title}</h4>
+                      <h4 className="text-3xl font-medium text-gray-900 mb-2">{step.title}</h4>
                     ) : (
                       <p className="text-gray-600">{step.description}</p>
                     )}
@@ -80,13 +78,13 @@ const ExpertSection = () => {
                      {index % 2 === 0 ? (
                       <p className="text-gray-600">{step.description}</p>
                     ) : (
-                      <h4 className="text-3xl font-bold text-gray-900 mb-2">{step.title}</h4>
+                      <h4 className="text-3xl font-medium text-gray-900 mb-2">{step.title}</h4>
                     )}
                   </div>
 
                   {/* === MOBILE: Text Block below circle === */}
                   <div className="md:hidden mt-6 text-center">
-                    <h4 className="text-3xl font-bold text-gray-900 mb-2">{step.title}</h4>
+                    <h4 className="text-3xl font-medium text-gray-900 mb-2">{step.title}</h4>
                     <p className="text-gray-600">{step.description}</p>
                   </div>
                 </div>

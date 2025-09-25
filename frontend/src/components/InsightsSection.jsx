@@ -22,11 +22,11 @@ const features = [
 
 const Insights = () => {
     return (
-        <section className="bg-white py-16 sm:py-24  mx-12px-6 md:px-16 lg:px-24">
+        <section className="bg-white sm:py-24 mx-12px-6 md:px-16 lg:px-24">
             {/* Top section with header and description */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16">
-                <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
-                    Where Clinical Insights Meet Real World Pharma Strategy
+                <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 leading-tight">
+                    Where Clinical <br /> Insights Meet Real <br /> World Pharma Strategy
                 </h2>
                 <p className="text-gray-600 text-lg lg:mt-2">
                     WOL is an expert-driven platform designed to bridge the gap between oncology specialists, emerging opinion leaders, and healthcare industry stakeholders across the globe. Whether launching a new therapy, exploring novel care models, or seeking strategic guidance, WOL provides direct, timely access to the right experts.
@@ -38,7 +38,7 @@ const Insights = () => {
                 {features.map((feature, index) => (
                     <div key={index} className="bg-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300">
                         <div className="w-16 h-16 bg-white rounded-full mb-6"></div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-3">
+                        <h3 className="text-xl font-semibold text-gray-900 mb-3">
                             {feature.title}
                         </h3>
                         <p className="text-gray-600">

@@ -3,7 +3,8 @@ import React from "react";
 function Hero() {
   return (
     <section
-      className=" mt-20 mx-12 min-h-screen flex items-center justify-start px-6 md:px-16 lg:px-24"
+      className=" mt-20 mx-16 min-h-screen flex items-center justify-start px-6 md:px-16 lg:px-24"
+      // py-16 sm:py-24 px-6 md:px-16 lg:px-24
       style={{
         backgroundImage: "url('public/bgHero.jpg')",
         backgroundSize: "200%",
@@ -18,7 +19,7 @@ function Hero() {
         </span>
 
         {/* Heading */}
-        <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
+        <h1 className="text-4xl md:text-6xl  leading-tight">
           World Oncology <br /> Leadership
         </h1>
 
