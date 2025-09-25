@@ -1,0 +1,55 @@
+import React from 'react';
+
+// Data for the feature cards to keep the JSX clean and scalable
+const features = [
+    {
+        title: 'Tailored Engagement',
+        description: 'Every interaction is customized. Choose from roundtables, webinars, podcasts, hybrid forums, or fully bespoke events.',
+    },
+    {
+        title: 'Exclusive Community',
+        description: 'Engage with a vetted network of global oncology KOLs, clinicians, and healthcare strategists.',
+    },
+    {
+        title: 'Strategic Value',
+        description: 'Every interaction is customized. Choose from roundtables, webinars, podcasts, hybrid forums, or fully bespoke events.',
+    },
+    {
+        title: 'End-to-End Execution',
+        description: 'Every interaction is customized. Choose from roundtables, webinars, podcasts, hybrid forums, or fully bespoke events.',
+    },
+];
+
+const Insights = () => {
+    return (
+        <section className="bg-white py-16 sm:py-24  mx-12px-6 md:px-16 lg:px-24">
+            {/* Top section with header and description */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16">
+                <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+                    Where Clinical Insights Meet Real World Pharma Strategy
+                </h2>
+                <p className="text-gray-600 text-lg lg:mt-2">
+                    WOL is an expert-driven platform designed to bridge the gap between oncology specialists, emerging opinion leaders, and healthcare industry stakeholders across the globe. Whether launching a new therapy, exploring novel care models, or seeking strategic guidance, WOL provides direct, timely access to the right experts.
+                </p>
+            </div>
+
+            {/* Four-card feature grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {features.map((feature, index) => (
+                    <div key={index} className="bg-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div className="w-16 h-16 bg-white rounded-full mb-6"></div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-3">
+                            {feature.title}
+                        </h3>
+                        <p className="text-gray-600">
+                            {feature.description}
+                        </p>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+    );
+};
+
+export default Insights;
