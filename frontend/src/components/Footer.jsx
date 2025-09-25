@@ -1,4 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+// Animation variant for the footer rising up
+const riseUpVariant = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: 'easeOut',
+      },
+    },
+};
 
 // Reusable component for footer links for cleaner code
 const FooterLink = ({ href = '#', children }) => (
@@ -10,8 +25,26 @@ const FooterLink = ({ href = '#', children }) => (
 );
 
 const Footer = () => {
+    const controls = useAnimation();
+    const [ref, inView] = useInView({
+      triggerOnce: true,
+      threshold: 0.1, // Animate when 10% of the footer is visible
+    });
+  
+    useEffect(() => {
+      if (inView) {
+        controls.start('visible');
+      }
+    }, [controls, inView]);
+
   return (
-    <footer className="font-sans bg-gray-100 text-sm">
+    <motion.footer
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={riseUpVariant}
+        className="font-sans bg-gray-100 text-sm overflow-x-hidden"
+    >
       <div className="container mx-auto px-6 md:px-16 lg:px-24">
         
         {/* Top Section */}
@@ -77,23 +110,24 @@ const Footer = () => {
       </div>
       
       {/* Bottom Section */}
-      <div className="bg-black underline text-gray-300">
+      <div className="bg-black text-gray-300">
         <div className="container mx-auto px-6 md:px-16 lg:px-24 py-4 flex flex-col lg:flex-row justify-between items-center text-xs">
             <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-4 lg:mb-0">
-                <a href="#" className="hover:text-white">Request an Expert</a>
-                <a href="#" className="hover:text-white">Host an Event</a>
-                <a href="#" className="hover:text-white">Sponsor an Event</a>
-                <a href="#" className="hover:text-white">Our Expert Community</a>
+                <a href="#" className="hover:text-white transition-colors">Request an Expert</a>
+                <a href="#" className="hover:text-white transition-colors">Host an Event</a>
+                <a href="#" className="hover:text-white transition-colors">Sponsor an Event</a>
+                <a href="#" className="hover:text-white transition-colors">Our Expert Community</a>
             </div>
             <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
-                <a href="#" className="hover:text-white">Privacy Policy</a>
-                <a href="#" className="hover:text-white">Data Protection</a>
-                <a href="#" className="hover:text-white">Compliance Statement</a>
+                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" className="hover:text-white transition-colors">Data Protection</a>
+                <a href="#" className="hover:text-white transition-colors">Compliance Statement</a>
             </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
 export default Footer;
+
